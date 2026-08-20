@@ -5,10 +5,6 @@
         static void Main(string[] args)
         {
             List<int> Numeros = new List<int> { };
-            List<int> Pares = new List<int> { };
-            List<int> Impares = new List<int> { };
-
-            Console.WriteLine("Digite um número (Digite 0 pra encerrar): ");
             int Num = -1;
             while (Num != 0)
             {
@@ -18,45 +14,26 @@
                 {
                     Numeros.Add(Num);
                 }
+
             }
+            int SomaNumeros = 0;
             foreach (int N in Numeros)
             {
-                if (N % 2 == 0)
-                {
-                    Pares.Add(N);
-                }
-                else
-                {
-                    Impares.Add(N);
-                }
-
+                SomaNumeros += N;
             }
-            Pares.Sort();
-            Impares.Sort();
-
-            int SomaPares = 0;
-            int SomaImpares = 0;
-            foreach (int P in Pares)
+            int MutNumeros = 1;
+            foreach (int N in Numeros)
             {
-                SomaPares += P;
-            }
-            foreach (int I in Impares)
-            {
-                SomaImpares += I;
+                MutNumeros *= N;
             }
 
-            Console.WriteLine("Os números que são pares: ");
-            foreach (int P in Pares)
-            {
-                Console.WriteLine(P + "");
-            }
-            Console.WriteLine("Os números que são pares: ");
-            foreach (int I in Impares)
-            {
-                Console.WriteLine(I + "");
-            }
-            Console.WriteLine($"A soma dos pares é: {SomaPares} e a soma dos impares é: {SomaImpares} A soma total dos números é: {SomaImpares + SomaPares}");
+            int Maior = Numeros.Max();
+            int Menor = Numeros.Min();
 
+            Console.WriteLine($"A soma dos números é: {SomaNumeros}");
+            Console.WriteLine($"A multiplicação dos números é: {MutNumeros}");
+            Console.WriteLine($"O maior número é: {Maior}");
+            Console.WriteLine($"O menor número é: {Menor}");
         }
     }
 }
