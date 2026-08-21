@@ -30,5 +30,3 @@ foreach (int i in numerosInformados)
 Console.WriteLine("Lista original: " + string.Join(", ", numerosInformados));
 Console.WriteLine("Números sem repeticao: " + string.Join(",", numerosSemRepeticao));
 Console.WriteLine("Números repitidos: " + string.Join(", ", numerosRepitidos));
-
-
